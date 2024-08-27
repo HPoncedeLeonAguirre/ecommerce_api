@@ -2,7 +2,7 @@ const { User } = require("../../config/database.js");
 const bycrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const postUserController = async (name, mail, password, role) => {
+const postUserController = async (name, mail, password, role, phone) => {
     const existingUser = await User.findOne({ where: { mail } });
 
     if (existingUser) {
@@ -15,6 +15,7 @@ const postUserController = async (name, mail, password, role) => {
         name,
         mail,
         password: hashedPassword,
+        phone,
         role,
     });
 

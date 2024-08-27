@@ -2,9 +2,9 @@ const postUserController = require("../../controllers/userControllers/postUserCo
 
 const postUserHandler = async (req, res) => {
     try {
-        const { name, mail, password, role } = req.body;
+        const { name, mail, password, role, phone } = req.body;
         
-        const { user, token } = await postUserController(name, mail, password, role);
+        const { user, token } = await postUserController(name, mail, password, role, phone);
 
         res.status(201).json({ user, token });
     } catch (error) {

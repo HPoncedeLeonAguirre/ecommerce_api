@@ -1,7 +1,5 @@
-const { DataTypes } = require('sequelize'); // Importa DataTypes de Sequelize para definir los tipos de datos de los modelos
-
+const { DataTypes } = require('sequelize'); 
 module.exports = (sequelize) => {
-  // Define el modelo 'ServiceOrder' en Sequelize
     sequelize.define(
         "Order", 
             {
